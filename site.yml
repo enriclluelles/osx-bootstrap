@@ -1,22 +1,22 @@
 ---
 - hosts: all
 
-  pre_tasks:
+  roles:
+    - homebrew
+
+  tasks:
+    - homebrew: name=macvim install_options=override-system-vim
     - homebrew: name='{{ item }}' update_homebrew=yes state=present
       with_items:
         - bash-completion
         - git
         - tmux
-        - pass
         - htop
         - reattach-to-user-namespace
         - bzr
         - hg
-        - imagemagick
         - ctags
-        - vim
         - node
-        - android-sdk
         - mongodb
         - mysql
         - redis
@@ -24,51 +24,39 @@
         - rbenv
         - ruby-build
         - ssh-copy-id
-      tags: brew
-
-    # - role: npm_package
-    #   package_name: grunt
-    #
-    # - role: npm_package
-    #   package_name: bower
-    #
+        - proctools
+        - gnu-sed
+        - docker
+        - tig
+        - awscli
+        - chruby
+        - ruby-install
+        - coreutils
+        - maven
+        - gradle
+        - macvim
 
     - homebrew_cask: name='{{ item }}' state=present
       with_items:
-        - font-source-code-pro
-        # - font-source-code-powerline # no more?
         - alfred
         - spotify
         - google-chrome
         - iterm2
-        - firefox
         - java
         - dash
-        - atom
         - postgres
         - virtualbox
         - vagrant
         - slack
         - harvest
         - vmware-fusion
-        - tinygrab
+        - skitch
         - google-hangouts
-        - horndis
-        # - istats-menus # no more?
         - valentina-studio
         - pgadmin3
         - transmission
-        - transmit
-        - android-file-transfer
-        - disk-inventory-x
+        - daisydisk
         - vagrant-manager
         - skype
-        - the-unarchiver
+        - keka
       tags: cask
-
-  roles:
-
-    - role: rbenv
-      rbenv_rubies:
-        - 2.1.3
-      rbenv_global: 2.1.3
