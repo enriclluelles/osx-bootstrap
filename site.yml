@@ -60,4 +60,5 @@
         - vagrant-manager
         - skype
         - keka
+        - telegram
       tags: cask
