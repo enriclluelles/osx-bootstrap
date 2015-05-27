@@ -6,7 +6,7 @@
 
   tasks:
     - homebrew: name=macvim install_options=override-system-vim
-    - homebrew: name='{{ item }}' update_homebrew=yes state=present
+    - homebrew: name='{{ item }}' update_homebrew=no state=present
       with_items:
         - bash-completion
         - git
