@@ -39,7 +39,7 @@
 
     - homebrew: name="caskroom/cask/brew-cask"
 
-    - homebrew_cask: name='{{ item }}' state=present
+    - homebrew_cask: name='{{ item }}' state=present install_options="appdir=/Applications"
       with_items:
         - alfred
         - spotify
