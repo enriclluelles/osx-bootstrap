@@ -20,9 +20,6 @@
         - mongodb
         - mysql
         - redis
-        - direnv
-        - rbenv
-        - ruby-build
         - ssh-copy-id
         - proctools
         - gnu-sed
