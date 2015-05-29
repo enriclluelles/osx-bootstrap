@@ -24,6 +24,7 @@
         - proctools
         - gnu-sed
         - docker
+        - boot2docker
         - tig
         - awscli
         - chruby
