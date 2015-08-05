@@ -56,7 +56,6 @@
         - vmware-fusion
         - skitch
         - google-hangouts
-        - valentina-studio
         - pgadmin3
         - transmission
         - daisydisk
@@ -67,4 +66,5 @@
         - evernote
         - rowanj-gitx
         - launchrocket
+        - dbeaver-enterprise
       tags: cask
