@@ -1,0 +1,25 @@
+---
+- hosts: all
+
+  roles:
+    - { role: homebrew, brew_dir: "/usr/local" }
+
+  tasks:
+    - homebrew: name='{{ item }}' update_homebrew=no state=present
+      with_items:
+        - bash-completion
+        - git
+
+    - shell: echo $HOME
+      register: home_dir
+
+    - set_fact:
+        rvm_dir: "{{ home_dir.stdout }}/.rvm/bin/rvm"
+
+    - stat: path={{ rvm_dir }}
+      register: rvm_exists
+
+    - shell: curl -sSL https://get.rvm.io | bash -s stable
+      when: not rvm_exists.stat.exists
+
+    - gem: name=fastlane version=1.48.0

@@ -1,0 +1,17 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: James G. Kim
+  description: Homebrew package installation for OS X
+  company: Tipplr
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+  - name: OSX
+    versions:
+      - 10.11
+  galaxy_tags:
+    - local
+    - system
+    - mac
